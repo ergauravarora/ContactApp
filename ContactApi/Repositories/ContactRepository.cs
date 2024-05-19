@@ -38,6 +38,31 @@ namespace ContactApi.Repositories
             return contact;
         }
 
+        public async Task<(IEnumerable<Contact> Contacts, int TotalCount)> GetPaginatedContactsAsync(int pageNumber, int pageSize, string searchQuery = null)
+        {
+            using var context = _context.CreateDbContext();
+
+            // Query for total count
+            IQueryable<Contact> query = context.Contacts;
+
+            // Apply search filter if search query is provided
+            if (!string.IsNullOrEmpty(searchQuery))
+            {
+                query = query.Where(c => c.Name.Contains(searchQuery) || c.Phone.Contains(searchQuery) || c.Email.Contains(searchQuery));
+            }
+
+            var totalContacts = await query.CountAsync();
+
+            // Apply pagination and execute query
+            var contacts = await query
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            return (contacts, totalContacts);
+        }
+
+
         public async Task<Contact> UpdateContactAsync(Contact contact)
         {
             using var context = _context.CreateDbContext();

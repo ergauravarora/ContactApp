@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { GraphQLClient } from 'graphql-request';
-import { GET_CONTACTS, GET_CONTACT_BY_ID } from '../graphql/queries';
+import { GET_CONTACTS_Paginated, GET_CONTACT_BY_ID } from '../graphql/queries';
 import { ADD_CONTACT, UPDATE_CONTACT, DELETE_CONTACT } from '../graphql/mutations';
 
 interface Contact {
@@ -15,20 +15,30 @@ interface ContactsState {
   contacts: Contact[];
   loading: boolean;
   error: string | null;
+  pageNumber : number;
+  pageSize: number;
+  totalCount: number;
 }
 
 const initialState: ContactsState = {
   contacts: [],
   loading: false,
   error: null,
+  pageNumber: 1,
+  pageSize: 5,
+  totalCount: 0,
 };
+
+
 
 const client = new GraphQLClient('https://localhost:1265/graphql');
 
 // Async thunk for fetching all contacts
-export const fetchContacts = createAsyncThunk('contacts/fetchContacts', async () => {
-  const response = await client.request(GET_CONTACTS);
-  return response.contacts;
+export const fetchContacts = createAsyncThunk('contacts/fetchContacts', async (data:any) => {
+  debugger
+  const {pageNumber,pageSize} =  data;
+  const response = await client.request(GET_CONTACTS_Paginated,{ pageNumber, pageSize });
+  return response.contactPaginated;
 });
 
 // Async thunk for fetching a contact by ID
@@ -65,9 +75,13 @@ const contactsSlice = createSlice({
         state.loading = true;
         state.error = null;
       })
-      .addCase(fetchContacts.fulfilled, (state, action: PayloadAction<Contact[]>) => {
+      .addCase(fetchContacts.fulfilled, (state, action: PayloadAction<any>) => {
+        debugger
         state.loading = false;
-        state.contacts = action.payload;
+        state.contacts = action.payload.contacts;
+        state.pageNumber = action.payload.pageNumber;
+        state.pageSize = action.payload.pageSize;
+        state.totalCount = action.payload.totalCount;
       })
       .addCase(fetchContacts.rejected, (state, action) => {
         state.loading = false;

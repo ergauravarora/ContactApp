@@ -8,12 +8,13 @@ import { useNavigate  } from 'react-router-dom';
 
 const ContactList: React.FC = () => {
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
-  const { contacts, loading, error } = useSelector((state: RootState) => state.contacts);
+  const { contacts, loading, error,pageNumber,pageSize,totalCount } = useSelector((state: RootState) => state.contacts);
  
   const history = useNavigate();
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    // Dispatching fetchContacts with dynamic pageNumber and pageSize
+      dispatch(fetchContacts({ pageNumber: 1, pageSize: 5 }));
   }, [dispatch]);
 
   const handleDelete = (id: number) => {
@@ -33,6 +34,7 @@ const ContactList: React.FC = () => {
   }
 
   return (
+    <div>
     <ListGroup>
       {contacts.map(contact => (
         <ListGroup.Item key={contact.id}>
@@ -51,6 +53,25 @@ const ContactList: React.FC = () => {
         </ListGroup.Item>
       ))}
     </ListGroup>
+    <div>
+    <p>Page {pageNumber} of {Math.ceil(totalCount / pageSize)}</p>
+   
+    <Button
+      variant="outline-secondary"
+      disabled={pageNumber === 1}
+      onClick={() => dispatch(fetchContacts({ pageNumber: pageNumber - 1, pageSize }))}
+    >
+      Previous
+    </Button>{' '}
+    <Button
+      variant="outline-secondary"
+      disabled={pageNumber === Math.ceil(totalCount / pageSize)}
+      onClick={() => dispatch(fetchContacts({ pageNumber: pageNumber + 1, pageSize }))}
+    >
+      Next
+    </Button>
+  </div>
+  </div>
   );
 };
 

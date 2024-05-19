@@ -23,3 +23,20 @@ export const GET_CONTACT_BY_ID = gql`
     }
   }
 `;
+
+export const GET_CONTACTS_Paginated = gql`
+query GetPaginatedContacts($pageNumber: Int!, $pageSize: Int!) {
+  contactPaginated(pageNumber: $pageNumber, pageSize: $pageSize) {
+    pageNumber
+    pageSize
+    totalCount
+    contacts {
+      email
+      id
+      image
+      name
+      phone
+    }
+  }
+}
+`;

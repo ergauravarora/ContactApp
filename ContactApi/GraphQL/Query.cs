@@ -23,8 +23,28 @@ namespace ContactApi.GraphQL
         [GraphQLName("contacts")]
         public Task<IEnumerable<ContactDTO>> GetContacts() => _contactRepository.GetAllContactsAsync();
 
-        [UseDbContext(typeof(ContactContext))]
+        
         [GraphQLName("contactById")]
         public Task<ContactDTO> GetContactById(int id) => _contactRepository.GetContactByIdAsync(id);
+
+        [GraphQLName("contactPaginated")]
+        public async Task<PaginatedContactsResult> GetPaginatedContacts(int pageNumber, int pageSize, string searchQuery = null)
+        {
+            var (contacts, totalCount) = await _contactRepository.GetPaginatedContactsAsync(pageNumber, pageSize,searchQuery);
+            return new PaginatedContactsResult
+            {
+                Contacts = contacts,
+                TotalCount = totalCount,
+                PageNumber = pageNumber,
+                PageSize = pageSize
+            };
+        }
+    }
+    public class PaginatedContactsResult
+    {
+        public IEnumerable<ContactDTO> Contacts { get; set; }
+        public int TotalCount { get; set; }
+        public int PageNumber { get; set; }
+        public int PageSize { get; set; }
     }
 }

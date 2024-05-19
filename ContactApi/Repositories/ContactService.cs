@@ -38,6 +38,14 @@ namespace ContactApi.Services
             return _mapper.Map<ContactDTO>(newContact);
         }
 
+        public async Task<(IEnumerable<ContactDTO> Contacts, int TotalCount)> GetPaginatedContactsAsync(int pageNumber, int pageSize,string searchQuery = null)
+        {
+            var (contacts, totalCount) = await _contactRepository.GetPaginatedContactsAsync(pageNumber, pageSize,searchQuery);
+            var contactDtos = _mapper.Map<IEnumerable<ContactDTO>>(contacts);
+            return (contactDtos, totalCount);
+        }
+
+
         public async Task<ContactDTO> UpdateContactAsync(ContactDTO contactDto)
         {
             var contact = _mapper.Map<Contact>(contactDto);
