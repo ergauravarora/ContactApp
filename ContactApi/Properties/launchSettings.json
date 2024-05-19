@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "ContactApi": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "dotnetRunMessages": true,
+      "launchUrl": "graphql",
+      "applicationUrl": "https://localhost:1265;"
+    }
+  }
+}

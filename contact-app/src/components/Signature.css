@@ -1,0 +1,35 @@
+.signature-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    font-size: 14px;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .signature-button.highlight {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  }
+  
+  .signature-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .signature-button:focus {
+    outline: none;
+  }
+  
+  .modal-body a {
+    color: #007bff;
+  }
+  
+  .modal-body a:hover {
+    text-decoration: underline;
+  }
+  
