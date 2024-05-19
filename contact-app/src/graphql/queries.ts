@@ -25,8 +25,8 @@ export const GET_CONTACT_BY_ID = gql`
 `;
 
 export const GET_CONTACTS_Paginated = gql`
-query GetPaginatedContacts($pageNumber: Int!, $pageSize: Int!) {
-  contactPaginated(pageNumber: $pageNumber, pageSize: $pageSize) {
+query GetPaginatedContacts($pageNumber: Int!, $pageSize: Int!,$searchQuery:String!) {
+  contactPaginated(pageNumber: $pageNumber, pageSize: $pageSize, searchQuery: $searchQuery) {
     pageNumber
     pageSize
     totalCount

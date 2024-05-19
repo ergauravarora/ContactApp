@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
 import { fetchContacts, deleteContact } from '../store/contactSlice';
-import { Button, ListGroup, Spinner } from 'react-bootstrap';
+import { Button, Form, ListGroup, Spinner } from 'react-bootstrap';
 import { ThunkDispatch } from 'redux-thunk';
 import { useNavigate  } from 'react-router-dom';
 
@@ -10,11 +10,13 @@ const ContactList: React.FC = () => {
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
   const { contacts, loading, error,pageNumber,pageSize,totalCount } = useSelector((state: RootState) => state.contacts);
  
+  const [searchQuery, setSearchQuery] = useState('');
+
   const history = useNavigate();
 
   useEffect(() => {
     // Dispatching fetchContacts with dynamic pageNumber and pageSize
-      dispatch(fetchContacts({ pageNumber: 1, pageSize: 5 }));
+      dispatch(fetchContacts({ pageNumber: 1, pageSize: 5,searchQuery:searchQuery }));
   }, [dispatch]);
 
   const handleDelete = (id: number) => {
@@ -25,8 +27,21 @@ const ContactList: React.FC = () => {
     return <Spinner animation="border" />;
   }
 
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const query = e.target.value;
+    setSearchQuery(query);
+    dispatch(fetchContacts({ pageNumber: 1, pageSize, searchQuery: query }));
+  };
+
+
   const handleEdit = (id: number) => {
     history(`/edit/${id}`);
+  };
+
+  const handleAdd = () => {
+    history(`/create`);
   };
 
   if (error) {
@@ -35,6 +50,20 @@ const ContactList: React.FC = () => {
 
   return (
     <div>
+    <Form.Group controlId="searchBox">
+        <Form.Control
+          type="text"
+          placeholder="Search..."
+          value={searchQuery}
+          onChange={handleSearch}
+        />
+         <Button
+      variant="primary"
+      onClick={() => handleAdd()}>
+      Add Contact
+    </Button>
+    </Form.Group>
+    
     <ListGroup>
       {contacts.map(contact => (
         <ListGroup.Item key={contact.id}>
@@ -70,6 +99,9 @@ const ContactList: React.FC = () => {
     >
       Next
     </Button>
+
+   
+    
   </div>
   </div>
   );

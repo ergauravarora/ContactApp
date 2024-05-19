@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact, updateContact,fetchContactById,fetchContacts } from '../store/contactSlice';
 import { RootState } from '../store';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Contact } from '../interfaces/Contact';
 import { Form, Button, Spinner } from 'react-bootstrap';
 import { ThunkDispatch } from 'redux-thunk';
@@ -13,6 +13,7 @@ interface ContactFormProps {
 const ContactForm: React.FC<ContactFormProps> = () => {
   const { contactId } = useParams<{ contactId: string }>(); // Use useParams to get contactId
 
+  const history = useNavigate();
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
   const contact = useSelector((state: RootState) =>
     state.contacts.contacts.find(c => c.id === Number(contactId))
@@ -95,6 +96,7 @@ const convertFileToBase64 = (file: File): Promise<string> => {
     } else {
       dispatch(addContact(formState));
     }
+    history(`/`);
   };
   
   if (loading) {

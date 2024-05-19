@@ -36,8 +36,8 @@ const client = new GraphQLClient('https://localhost:1265/graphql');
 // Async thunk for fetching all contacts
 export const fetchContacts = createAsyncThunk('contacts/fetchContacts', async (data:any) => {
   debugger
-  const {pageNumber,pageSize} =  data;
-  const response = await client.request(GET_CONTACTS_Paginated,{ pageNumber, pageSize });
+  const {pageNumber,pageSize,searchQuery} =  data;
+  const response = await client.request(GET_CONTACTS_Paginated,{ pageNumber, pageSize,searchQuery });
   return response.contactPaginated;
 });
 
