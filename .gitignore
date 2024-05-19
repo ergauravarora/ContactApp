@@ -1,2 +1,18 @@
-.vs
-/bin
+# Ignore all node_modules directories
+/contact-app/node_modules/
+
+# Ignore build output directories
+/contact-app/build/
+/ContactApi/bin/
+/ContactApi/obj/
+
+# Ignore environment files
+/contact-app/.env
+/ContactApi/.env
+
+# Ignore log files
+/contact-app/*.log
+/ContactApi/*.log
+
+# Global ignore pattern for any log files
+*.log
