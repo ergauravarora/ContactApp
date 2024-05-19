@@ -40,7 +40,10 @@ const ContactList: React.FC = () => {
             <strong>{contact.name}</strong>
             <p>{contact.email}</p>
             <p>{contact.phone}</p>
+            {contact.image && <img src={contact.image} alt="Contact" style={{ width: '100px', height: '100px', marginTop: '10px' }} />}
+     
           </div>
+         
           <Button variant="primary" onClick={() => handleEdit(contact.id)}>Edit</Button>
           <Button variant="danger" onClick={() => handleDelete(contact.id)}>
             Delete

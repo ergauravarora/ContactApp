@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
-using Serilog.Events;
 using ContactApi.Repositories;
 using Microsoft.EntityFrameworkCore;
 using ContactApi;
@@ -27,28 +26,32 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       builder =>
                       {
-                          builder.WithOrigins("http://localhost:3000","http://www.contoso.com").AllowAnyMethod().AllowAnyHeader();
+                          builder.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader();
                       });
 });
 
 // Add services to the container.
 builder.Host.UseSerilog(); // Use Serilog for logging
 
-// Add services to the container.
-builder.Services.AddPooledDbContextFactory<ContactContext>(options => options.UseInMemoryDatabase("ContactList"));
+// Register the DbContextFactory instead of DbContext
+builder.Services.AddDbContextFactory<ContactContext>(options =>
+{
+    options.UseInMemoryDatabase("ContactList");
+    options.EnableSensitiveDataLogging(true);
+});
 
-builder.Services.AddSingleton<IContactRepository, ContactRepository>();
-builder.Services.AddSingleton<IContactService, ContactService>();
+// Register repositories and services
+builder.Services.AddScoped<IContactRepository, ContactRepository>();
+builder.Services.AddScoped<IContactService, ContactService>();
 builder.Services.AddSingleton<DataSeederService>();
-builder.Services.AddSingleton<ContactContext>();
 
-builder.Services.AddAutoMapper(typeof(Startup));
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services
     .AddGraphQLServer()
     .AddQueryType<Query>()
     .AddMutationType<Mutation>()
-    .AddType<ContactType>()
+    //.AddType<ContactType>()
     .AddFiltering()
     .AddSorting();
 

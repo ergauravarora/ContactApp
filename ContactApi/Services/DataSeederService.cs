@@ -70,7 +70,7 @@ namespace ContactApi.Services
             // Return a sample base64-encoded image string here.
             // For demonstration, we'll return an empty string.
             // Replace this with actual base64-encoded image data.
-            return "iVBORw0KGgoAAAANSUhEUgAAAAUA" +
+            return "data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUA" +
                    "AAAFCAYAAACNbyblAAAAHElEQVQI12P4" +
                    "//8/w38GIAXDIBKE0DHxgljNBAAO" +
                    "9TXL0Y4OHwAAAABJRU5ErkJggg==";

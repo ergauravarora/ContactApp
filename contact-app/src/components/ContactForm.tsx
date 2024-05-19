@@ -11,7 +11,6 @@ interface ContactFormProps {
 }
 
 const ContactForm: React.FC<ContactFormProps> = () => {
-  debugger
   const { contactId } = useParams<{ contactId: string }>(); // Use useParams to get contactId
 
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
@@ -59,7 +58,6 @@ const ContactForm: React.FC<ContactFormProps> = () => {
   };
 
   // const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   debugger
   //   const file = e.target.files?.[0];
   //   if (file) {
   //     const reader = new FileReader();
@@ -132,9 +130,10 @@ const convertFileToBase64 = (file: File): Promise<string> => {
           onChange={handleChange}
         />
       </Form.Group>
+      {formState.image && <img src={formState.image} alt="Contact" style={{ width: '100px', height: '100px', marginTop: '10px' }} />}
+      
       <Form.Group controlId="imageBase64">
       <Form.Label>Image</Form.Label>
-      {formState.image && <img src={'data:image/png;base64,'+formState.image} alt="Contact" style={{ width: '100px', height: '100px', marginTop: '10px' }} />}
       <Form.Control type="file" name="imageBase64" onChange={handleImageChange} />
     </Form.Group>
       

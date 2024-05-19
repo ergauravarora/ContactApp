@@ -4,15 +4,25 @@ using ContactApi.Models;
 using ContactApi.Data;
 using System.Threading.Tasks;
 using HotChocolate.Types;
+using ContactApi.Repositories;
+using ContactApi.Services;
+using ContactApi.DTOs;
 
 namespace ContactApi.GraphQL
 {
     public class Mutation
     {
-        [UseDbContext(typeof(ContactContext))]
-        public async Task<Contact> AddContact([ScopedService] ContactContext context, AddContactInput input)
+        private readonly IContactService _contactRepository;
+
+        public Mutation(IContactService contactRepository)
         {
-            var contact = new Contact
+            _contactRepository = contactRepository;
+        }
+
+   
+        public async Task<ContactDTO> AddContact(AddContactInput input)
+        {
+            var contact = new ContactDTO
             {
                 Name = input.Name,
                 Email = input.Email,
@@ -20,37 +30,35 @@ namespace ContactApi.GraphQL
                 Image = input.Image // New field
             };
 
-            context.Contacts.Add(contact);
-            await context.SaveChangesAsync();
-            return contact;
+           await _contactRepository.AddContactAsync(contact);
+           return contact;
         }
 
-        [UseDbContext(typeof(ContactContext))]
-        public async Task<Contact> UpdateContact([ScopedService] ContactContext context, UpdateContactInput input)
+       
+        public async Task<ContactDTO> UpdateContact(UpdateContactInput input)
         {
-            var contact = await context.Contacts.FindAsync(input.Id);
+            var contact = await _contactRepository.GetContactByIdAsync(input.Id);
             if (contact != null)
             {
                 contact.Name = input.Name;
                 contact.Email = input.Email;
                 contact.Phone = input.Phone;
                 contact.Image = input.Image; // New field
-                await context.SaveChangesAsync();
+                await _contactRepository.UpdateContactAsync(contact);
             }
 
             return contact;
         }
 
-        [UseDbContext(typeof(ContactContext))]
-        public async Task<Contact> DeleteContact([ScopedService] ContactContext context, int id)
+       
+        public async Task<ContactDTO> DeleteContact(int id)
         {
-            var contact = await context.Contacts.FindAsync(id);
+            var contact = await _contactRepository.GetContactByIdAsync(id);
             if (contact != null)
             {
-                context.Contacts.Remove(contact);
-                await context.SaveChangesAsync();
+                await _contactRepository.DeleteContactAsync(id);
+ 
             }
-
             return contact;
         }
     }
