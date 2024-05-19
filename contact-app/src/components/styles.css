@@ -1,0 +1,37 @@
+.floating-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px; /* Adjust as needed */
+  }
+  
+  .contact-info {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    margin-bottom: 10px;
+  }
+  
+  .info-label {
+    font-weight: bold;
+    width: 100px; /* Adjust as needed */
+    margin-right: 10px; /* Add some space between label and text */
+  }
+  
+  .search-container {
+    margin-bottom: 20px; /* Add margin to the bottom */
+  }
+  
+  .search-container .form-control {
+    width: 70%; /* Adjust width as needed */
+  }
+  
