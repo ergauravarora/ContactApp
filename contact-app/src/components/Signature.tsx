@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import { FaInfoCircle } from 'react-icons/fa'; // Import the info icon
 import './Signature.css';
 
 interface SignatureProps {
@@ -29,7 +30,7 @@ const Signature: React.FC<SignatureProps> = ({ author, message, portfolioUrl }) 
         className={`signature-button ${highlight ? 'highlight' : ''}`}
         onClick={handleShow}
       >
-        Info
+        <FaInfoCircle /> {/* Use the info icon instead of text */}
       </Button>
 
       <Modal show={show} onHide={handleClose} centered>
