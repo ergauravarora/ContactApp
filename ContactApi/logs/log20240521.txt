@@ -3165,3 +3165,269 @@ Microsoft.EntityFrameworkCore.DbUpdateException: Required properties '{'PhoneNum
 2024-05-21 20:29:37.412 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
 2024-05-21 20:29:37.427 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
 2024-05-21 20:29:37.429 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 21.5436ms
+2024-05-21 20:47:01.692 +05:30 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-05-21 20:47:01.992 +05:30 [INF] Seeding database...
+2024-05-21 20:47:02.218 +05:30 [INF] Saved 40 entities to in-memory store.
+2024-05-21 20:47:02.233 +05:30 [INF] Database seeded successfully.
+2024-05-21 20:47:02.408 +05:30 [INF] Now listening on: https://localhost:1265
+2024-05-21 20:47:02.411 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-21 20:47:02.413 +05:30 [INF] Hosting environment: Production
+2024-05-21 20:47:02.414 +05:30 [INF] Content root path: D:\Projects\personal\contacts\ContactApi
+2024-05-21 20:47:03.050 +05:30 [INF] Request starting HTTP/2 GET https://localhost:1265/graphql - -
+2024-05-21 20:47:03.189 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:03.258 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:03.273 +05:30 [INF] Request finished HTTP/2 GET https://localhost:1265/graphql - - - 301 0 - 226.3966ms
+2024-05-21 20:47:04.269 +05:30 [INF] Request starting HTTP/2 GET https://localhost:1265/graphql/bcp-config.json - -
+2024-05-21 20:47:04.281 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:04.311 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:04.480 +05:30 [INF] Request finished HTTP/2 GET https://localhost:1265/graphql/bcp-config.json - - - 200 47 application/json;+charset=utf-8 210.9656ms
+2024-05-21 20:47:05.212 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 158
+2024-05-21 20:47:05.223 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 152
+2024-05-21 20:47:05.223 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 161
+2024-05-21 20:47:05.224 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 156
+2024-05-21 20:47:05.231 +05:30 [INF] CORS policy execution failed.
+2024-05-21 20:47:05.234 +05:30 [INF] CORS policy execution failed.
+2024-05-21 20:47:05.238 +05:30 [INF] CORS policy execution failed.
+2024-05-21 20:47:05.241 +05:30 [INF] CORS policy execution failed.
+2024-05-21 20:47:05.244 +05:30 [INF] Request origin https://localhost:1265 does not have permission to access the resource.
+2024-05-21 20:47:05.255 +05:30 [INF] Request origin https://localhost:1265 does not have permission to access the resource.
+2024-05-21 20:47:05.256 +05:30 [INF] Request origin https://localhost:1265 does not have permission to access the resource.
+2024-05-21 20:47:05.258 +05:30 [INF] Request origin https://localhost:1265 does not have permission to access the resource.
+2024-05-21 20:47:05.263 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:05.266 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:05.270 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:05.272 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:06.796 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:06.798 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:06.799 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:06.799 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:06.849 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 161 - 200 - application/graphql-response+json;+charset=utf-8 1625.9448ms
+2024-05-21 20:47:06.848 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 158 - 200 - application/graphql-response+json;+charset=utf-8 1636.3591ms
+2024-05-21 20:47:06.848 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 152 - 200 - application/graphql-response+json;+charset=utf-8 1625.0546ms
+2024-05-21 20:47:06.909 +05:30 [INF] Request starting HTTP/2 GET https://localhost:1265/graphql/service-worker.js - -
+2024-05-21 20:47:06.844 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 156 - 200 - application/graphql-response+json;+charset=utf-8 1620.2263ms
+2024-05-21 20:47:06.910 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 1439
+2024-05-21 20:47:06.919 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:06.923 +05:30 [INF] CORS policy execution failed.
+2024-05-21 20:47:06.926 +05:30 [INF] Request origin https://localhost:1265 does not have permission to access the resource.
+2024-05-21 20:47:06.956 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:07.047 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:07.053 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 1439 - 200 - application/graphql-response+json;+charset=utf-8 143.2178ms
+2024-05-21 20:47:07.391 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:07.393 +05:30 [INF] Request finished HTTP/2 GET https://localhost:1265/graphql/service-worker.js - - - 304 - - 484.0214ms
+2024-05-21 20:47:15.538 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 557
+2024-05-21 20:47:15.541 +05:30 [INF] CORS policy execution failed.
+2024-05-21 20:47:15.545 +05:30 [INF] Request origin https://localhost:1265 does not have permission to access the resource.
+2024-05-21 20:47:15.548 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:15.770 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:15.772 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 557 - 200 - application/graphql-response+json;+charset=utf-8 234.2914ms
+2024-05-21 20:47:26.969 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 443
+2024-05-21 20:47:26.971 +05:30 [INF] CORS policy execution failed.
+2024-05-21 20:47:26.972 +05:30 [INF] Request origin https://localhost:1265 does not have permission to access the resource.
+2024-05-21 20:47:26.974 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:27.063 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:27.065 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 443 - 200 - application/graphql-response+json;+charset=utf-8 96.2777ms
+2024-05-21 20:47:36.275 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 402
+2024-05-21 20:47:36.277 +05:30 [INF] CORS policy execution failed.
+2024-05-21 20:47:36.279 +05:30 [INF] Request origin https://localhost:1265 does not have permission to access the resource.
+2024-05-21 20:47:36.281 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:36.288 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:36.290 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 402 - 200 - application/graphql-response+json;+charset=utf-8 14.3863ms
+2024-05-21 20:47:41.453 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 387
+2024-05-21 20:47:41.455 +05:30 [INF] CORS policy execution failed.
+2024-05-21 20:47:41.457 +05:30 [INF] Request origin https://localhost:1265 does not have permission to access the resource.
+2024-05-21 20:47:41.459 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:41.464 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:41.467 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 387 - 200 - application/graphql-response+json;+charset=utf-8 14.1692ms
+2024-05-21 20:47:52.446 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:1265/graphql - -
+2024-05-21 20:47:52.448 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:47:52.451 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:1265/graphql - - - 204 - - 4.7823ms
+2024-05-21 20:47:52.453 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 554
+2024-05-21 20:47:52.454 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:47:52.456 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:52.468 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:52.470 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 17.3915ms
+2024-05-21 20:47:56.513 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 308
+2024-05-21 20:47:56.516 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:47:56.524 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:56.555 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:56.557 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 308 - 200 - application/graphql-response+json;+charset=utf-8 43.8634ms
+2024-05-21 20:47:59.199 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:1265/graphql - -
+2024-05-21 20:47:59.203 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:47:59.206 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:1265/graphql - - - 204 - - 7.6373ms
+2024-05-21 20:47:59.210 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 554
+2024-05-21 20:47:59.213 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:47:59.215 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:59.230 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:47:59.232 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 21.8665ms
+2024-05-21 20:48:03.073 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 176
+2024-05-21 20:48:03.075 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:48:03.077 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:03.122 +05:30 [INF] Saved 1 entities to in-memory store.
+2024-05-21 20:48:03.128 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:03.130 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 176 - 200 - application/graphql-response+json;+charset=utf-8 57.1985ms
+2024-05-21 20:48:08.176 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:1265/graphql - -
+2024-05-21 20:48:08.178 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:48:08.187 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:1265/graphql - - - 204 - - 11.0620ms
+2024-05-21 20:48:08.189 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 554
+2024-05-21 20:48:08.193 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:48:08.196 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:08.208 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:08.210 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 20.5678ms
+2024-05-21 20:48:11.206 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 554
+2024-05-21 20:48:11.208 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:48:11.212 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:11.236 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:11.239 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 33.3348ms
+2024-05-21 20:48:11.956 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 554
+2024-05-21 20:48:11.958 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:48:11.962 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:11.977 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:11.981 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 24.8793ms
+2024-05-21 20:48:12.364 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 554
+2024-05-21 20:48:12.368 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:48:12.370 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:12.386 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:12.388 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 24.7228ms
+2024-05-21 20:48:13.087 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 554
+2024-05-21 20:48:13.091 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:48:13.093 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:13.104 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:13.106 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 19.0856ms
+2024-05-21 20:48:23.176 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:1265/graphql - -
+2024-05-21 20:48:23.177 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:48:23.179 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:1265/graphql - - - 204 - - 3.6111ms
+2024-05-21 20:48:23.184 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 554
+2024-05-21 20:48:23.186 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:48:23.189 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:23.198 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:23.200 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 16.2397ms
+2024-05-21 20:48:25.799 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 555
+2024-05-21 20:48:25.807 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:48:25.818 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:25.860 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:25.861 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 555 - 200 - application/graphql-response+json;+charset=utf-8 62.1913ms
+2024-05-21 20:48:28.305 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:1265/graphql - -
+2024-05-21 20:48:28.310 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:48:28.318 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:1265/graphql - - - 204 - - 13.9312ms
+2024-05-21 20:48:28.322 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 556
+2024-05-21 20:48:28.327 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:48:28.332 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:28.344 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:28.346 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 556 - 200 - application/graphql-response+json;+charset=utf-8 23.6095ms
+2024-05-21 20:48:32.314 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 557
+2024-05-21 20:48:32.319 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:48:32.327 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:32.335 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:32.339 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 557 - 200 - application/graphql-response+json;+charset=utf-8 24.6178ms
+2024-05-21 20:48:35.410 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:1265/graphql - -
+2024-05-21 20:48:35.413 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:48:35.416 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:1265/graphql - - - 204 - - 5.7672ms
+2024-05-21 20:48:35.419 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 554
+2024-05-21 20:48:35.422 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:48:35.424 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:35.443 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:35.445 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 25.7891ms
+2024-05-21 20:48:43.293 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:1265/graphql - -
+2024-05-21 20:48:43.302 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:48:43.303 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:1265/graphql - - - 204 - - 10.1667ms
+2024-05-21 20:48:43.305 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 555
+2024-05-21 20:48:43.310 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:48:43.311 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:43.326 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:48:43.329 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 555 - 200 - application/graphql-response+json;+charset=utf-8 23.9203ms
+2024-05-21 20:49:55.161 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:1265/graphql - -
+2024-05-21 20:49:55.163 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:49:55.165 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:1265/graphql - - - 204 - - 3.6688ms
+2024-05-21 20:49:55.167 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 554
+2024-05-21 20:49:55.171 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:49:55.172 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:49:55.208 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:49:55.221 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 52.0771ms
+2024-05-21 20:49:58.025 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 554
+2024-05-21 20:49:58.030 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:49:58.032 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:49:58.041 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:49:58.043 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 18.3620ms
+2024-05-21 20:52:34.843 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:1265/graphql - -
+2024-05-21 20:52:34.850 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:52:34.854 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:1265/graphql - - - 204 - - 10.9712ms
+2024-05-21 20:52:34.856 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 554
+2024-05-21 20:52:34.859 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:52:34.860 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:52:34.870 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:52:34.872 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 15.6914ms
+2024-05-21 20:52:56.358 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:1265/graphql - -
+2024-05-21 20:52:56.360 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:52:56.362 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:1265/graphql - - - 204 - - 3.7647ms
+2024-05-21 20:52:56.365 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 176
+2024-05-21 20:52:56.367 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:52:56.369 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:52:56.377 +05:30 [INF] Saved 1 entities to in-memory store.
+2024-05-21 20:52:56.379 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:52:56.381 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 176 - 200 - application/graphql-response+json;+charset=utf-8 15.8902ms
+2024-05-21 20:53:03.381 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:1265/graphql - -
+2024-05-21 20:53:03.383 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:53:03.385 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:1265/graphql - - - 204 - - 4.2399ms
+2024-05-21 20:53:03.389 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 554
+2024-05-21 20:53:03.392 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:53:03.394 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:53:03.403 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:53:03.405 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 17.3438ms
+2024-05-21 20:53:04.416 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 554
+2024-05-21 20:53:04.418 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:53:04.421 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:53:04.432 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:53:04.444 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 28.3918ms
+2024-05-21 20:53:04.752 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 554
+2024-05-21 20:53:04.754 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:53:04.758 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:53:04.769 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:53:04.771 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 19.3472ms
+2024-05-21 20:53:05.100 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 554
+2024-05-21 20:53:05.102 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:53:05.104 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:53:05.115 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:53:05.118 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 17.7819ms
+2024-05-21 20:53:06.348 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 554
+2024-05-21 20:53:06.350 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:53:06.353 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:53:06.362 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:53:06.364 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 15.9485ms
+2024-05-21 20:53:09.372 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:1265/graphql - -
+2024-05-21 20:53:09.374 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:53:09.377 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:1265/graphql - - - 204 - - 4.1483ms
+2024-05-21 20:53:09.379 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 177
+2024-05-21 20:53:09.381 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:53:09.383 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:53:09.388 +05:30 [INF] Saved 1 entities to in-memory store.
+2024-05-21 20:53:09.390 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:53:09.392 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 177 - 200 - application/graphql-response+json;+charset=utf-8 13.2599ms
+2024-05-21 20:53:13.566 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 554
+2024-05-21 20:53:13.569 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:53:13.572 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:53:13.590 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:53:13.597 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 30.4324ms
+2024-05-21 20:53:14.491 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:1265/graphql - -
+2024-05-21 20:53:14.493 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:53:14.495 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:1265/graphql - - - 204 - - 3.4355ms
+2024-05-21 20:53:14.497 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 554
+2024-05-21 20:53:14.500 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:53:14.501 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:53:14.513 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:53:14.518 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 22.0978ms
+2024-05-21 20:53:14.909 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 554
+2024-05-21 20:53:14.911 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:53:14.915 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:53:14.927 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:53:14.931 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 22.1021ms
+2024-05-21 20:53:15.317 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 554
+2024-05-21 20:53:15.319 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:53:15.322 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:53:15.332 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:53:15.336 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 19.6657ms
+2024-05-21 20:53:15.990 +05:30 [INF] Request starting HTTP/2 POST https://localhost:1265/graphql application/json 554
+2024-05-21 20:53:15.994 +05:30 [INF] CORS policy execution successful.
+2024-05-21 20:53:15.997 +05:30 [INF] Executing endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:53:16.003 +05:30 [INF] Executed endpoint 'Hot Chocolate GraphQL Pipeline'
+2024-05-21 20:53:16.007 +05:30 [INF] Request finished HTTP/2 POST https://localhost:1265/graphql application/json 554 - 200 - application/graphql-response+json;+charset=utf-8 16.4331ms

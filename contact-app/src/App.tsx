@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom';
 import ContactList from './components/ContactList';
 import ContactForm from './components/ContactForm';
-import Signature from './components/Signature';
-import Preloader from './components/Preloader';
+import Signature from './components/signature/Signature';
+import Preloader from './components/loader/Preloader';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App: React.FC = () => {
@@ -32,7 +32,7 @@ const App: React.FC = () => {
       </div>
       <Signature
         author="Gaurav"
-        message="Created by Gaurav for assessment to a company"
+        message="Contact app created for 'Deltek'"
         portfolioUrl="https://www.ergauravarora.com"
       />
     </Router>
