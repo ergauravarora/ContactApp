@@ -5,6 +5,7 @@ using ContactApi.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using ContactApi.Services;
 
 namespace ContactApi.Tests
 {
@@ -12,15 +13,17 @@ namespace ContactApi.Tests
     {
         private readonly ContactsController _controller;
         private readonly ContactContext _context;
+        private readonly IContactService _contactService;
 
-        public ContactsControllerTests()
+        public ContactsControllerTests(IContactService contactService)
         {
+            _contactService = contactService;
             var options = new DbContextOptionsBuilder<ContactContext>()
                 .UseInMemoryDatabase(databaseName: "TestDatabase")
                 .Options;
             _context = new ContactContext(options);
 
-            _controller = new ContactsController(_context);
+            _controller = new ContactsController(_contactService);
         }
 
         [Fact]

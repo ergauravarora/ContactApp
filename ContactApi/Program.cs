@@ -1,5 +1,4 @@
 using ContactApi.Data;
-using ContactApi.GraphQL.Types;
 using ContactApi.GraphQL;
 using ContactApi.Services;
 using Microsoft.AspNetCore.Builder;
@@ -73,6 +72,6 @@ app.UseEndpoints(endpoints =>
 });
 
 var seeder = app.Services.GetRequiredService<DataSeederService>();
-seeder.SeedAsync(3).Wait();
+seeder.SeedAsync(20).Wait();
 
 app.Run();

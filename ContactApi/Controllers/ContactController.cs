@@ -3,6 +3,8 @@ using ContactApi.Models;
 using ContactApi.Data;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using ContactApi.Services;
+using ContactApi.DTOs;
 
 namespace ContactApi.Controllers
 {
@@ -10,77 +12,59 @@ namespace ContactApi.Controllers
     [ApiController]
     public class ContactsController : ControllerBase
     {
-        private readonly ContactContext _context;
+        private readonly IContactService _context;
 
-        public ContactsController(ContactContext context)
+        public ContactsController(IContactService context)
         {
             _context = context;
 
-            if (_context.Contacts.Count() == 0)
-            {
-                // Create default contacts if none exist.
-                _context.Contacts.AddRange(
-                    new Contact { Name = "John Doe", Email = "john@example.com", Phone = "1234567890",Image = "" },
-                    new Contact { Name = "Jane Smith", Email = "jane@example.com", Phone = "0987654321", Image = "" }
-                );
-                _context.SaveChanges();
-            }
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Contact>> GetContacts()
+        public async Task<IActionResult> GetContacts()
         {
-            return _context.Contacts.ToList();
+            return Ok(await _context.GetAllContactsAsync());
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Contact> GetContact(int id)
+        public async Task<IActionResult> GetContact(int id)
         {
-            var contact = _context.Contacts.Find(id);
+            var contact =await _context.GetContactByIdAsync(id);
 
             if (contact == null)
             {
                 return NotFound();
             }
 
-            return contact;
+            return Ok(contact);
         }
 
         [HttpPost]
-        public ActionResult<Contact> PostContact(Contact contact)
+        public async Task<IActionResult> PostContact(ContactDTO contact)
         {
-            _context.Contacts.Add(contact);
-            _context.SaveChanges();
-
-            return CreatedAtAction(nameof(GetContact), new { id = contact.Id }, contact);
+           return Ok(await _context.AddContactAsync(contact));
+          
         }
 
         [HttpPut("{id}")]
-        public IActionResult PutContact(int id, Contact contact)
+        public async Task<IActionResult> PutContact(int id, ContactDTO contact)
         {
             if (id != contact.Id)
             {
+               
                 return BadRequest();
+              
             }
 
-            _context.Entry(contact).State = EntityState.Modified;
-            _context.SaveChanges();
+            await _context.UpdateContactAsync(contact);
 
             return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteContact(int id)
+        public async Task<IActionResult> DeleteContact(int id)
         {
-            var contact = _context.Contacts.Find(id);
-
-            if (contact == null)
-            {
-                return NotFound();
-            }
-
-            _context.Contacts.Remove(contact);
-            _context.SaveChanges();
+            await _context.DeleteContactAsync(id);
 
             return NoContent();
         }

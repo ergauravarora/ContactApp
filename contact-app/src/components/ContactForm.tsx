@@ -130,6 +130,9 @@ const ContactForm: React.FC<ContactFormProps> = () => {
           <Button variant="primary" onClick={nextStep}>
             Next <FaArrowRight />
           </Button>
+          <Button variant="secondary" onClick={handleCancel}>
+            <FaArrowLeft /> Cancel
+          </Button>
         </>
       )}
 

@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
 import { fetchContacts, deleteContact } from '../store/contactSlice';
-import { Button, Form, Card, Spinner, Row, Col, Pagination } from 'react-bootstrap';
+import { Button, Form, Card, Spinner, Row, Col, Pagination, Modal } from 'react-bootstrap';
 import { ThunkDispatch } from 'redux-thunk';
 import { useNavigate } from 'react-router-dom';
-import { FaPlus, FaEdit, FaTrash, FaAngleDown, FaAngleUp } from 'react-icons/fa'; // Import Font Awesome icons
-import './styles.css'; // Import the CSS file
+import { FaPlus, FaEdit, FaTrash, FaAngleDown, FaAngleUp } from 'react-icons/fa';
+import './styles.css';
 import { Contact } from '../interfaces/Contact';
 
 const ContactList: React.FC = () => {
@@ -15,6 +15,8 @@ const ContactList: React.FC = () => {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedContactId, setSelectedContactId] = useState<number | null>(null);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [contactToDelete, setContactToDelete] = useState<number | null>(null);
 
   const history = useNavigate();
 
@@ -23,7 +25,15 @@ const ContactList: React.FC = () => {
   }, [dispatch]);
 
   const handleDelete = (id: number) => {
-    dispatch(deleteContact(id));
+    setContactToDelete(id);
+    setShowDeleteModal(true);
+  };
+
+  const confirmDelete = () => {
+    if (contactToDelete !== null) {
+      dispatch(deleteContact(contactToDelete));
+      setShowDeleteModal(false);
+    }
   };
 
   const handleToggleDetail = (id: number) => {
@@ -123,6 +133,17 @@ const ContactList: React.FC = () => {
           <Pagination.Next disabled={pageNumber === Math.ceil(totalCount / pageSize)} onClick={() => dispatch(fetchContacts({ pageNumber: pageNumber + 1, pageSize, searchQuery }))} />
         </Pagination>
       </div>
+
+      <Modal show={showDeleteModal} onHide={() => setShowDeleteModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Confirm Delete</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Are you sure you want to delete this contact?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowDeleteModal(false)}>Cancel</Button>
+          <Button variant="danger" onClick={confirmDelete}>Delete</Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };
