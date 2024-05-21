@@ -27,7 +27,9 @@ namespace ContactApi.GraphQL
                 Name = input.Name,
                 Email = input.Email,
                 Phone = input.Phone,
-                Image = input.Image // New field
+                Image = input.Image,
+                ContactDetail = input.ContactDetail
+                
             };
 
            await _contactRepository.AddContactAsync(contact);
@@ -44,6 +46,7 @@ namespace ContactApi.GraphQL
                 contact.Email = input.Email;
                 contact.Phone = input.Phone;
                 contact.Image = input.Image; // New field
+                contact.ContactDetail = input.ContactDetail;
                 await _contactRepository.UpdateContactAsync(contact);
             }
 
@@ -63,6 +66,6 @@ namespace ContactApi.GraphQL
         }
     }
 
-    public record AddContactInput(int Id, string Name, string Email, string Phone, string Image); // New field
-    public record UpdateContactInput(int Id, string Name, string Email, string Phone, string Image); // New field
+    public record AddContactInput(int Id, string Name, string Email, string Phone, string Image,ContactDetailDTO ContactDetail); // New field
+    public record UpdateContactInput(int Id, string Name, string Email, string Phone, string Image, ContactDetailDTO ContactDetail); // New field
 }

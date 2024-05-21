@@ -51,7 +51,6 @@ builder.Services
     .AddGraphQLServer()
     .AddQueryType<Query>()
     .AddMutationType<Mutation>()
-    //.AddType<ContactType>()
     .AddFiltering()
     .AddSorting();
 
@@ -74,6 +73,6 @@ app.UseEndpoints(endpoints =>
 });
 
 var seeder = app.Services.GetRequiredService<DataSeederService>();
-seeder.SeedAsync().Wait();
+seeder.SeedAsync(3).Wait();
 
 app.Run();

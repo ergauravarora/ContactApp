@@ -20,13 +20,23 @@ export const GET_CONTACT_BY_ID = gql`
       email
       phone
       image
+      contactDetail {
+        address
+        contactId
+        country
+        pincode
+      }
     }
   }
 `;
 
 export const GET_CONTACTS_Paginated = gql`
-query GetPaginatedContacts($pageNumber: Int!, $pageSize: Int!,$searchQuery:String!) {
-  contactPaginated(pageNumber: $pageNumber, pageSize: $pageSize, searchQuery: $searchQuery) {
+query GetPaginatedContacts($pageNumber: Int!, $pageSize: Int!, $searchQuery: String!) {
+  contactPaginated(
+    pageNumber: $pageNumber
+    pageSize: $pageSize
+    searchQuery: $searchQuery
+  ) {
     pageNumber
     pageSize
     totalCount
@@ -36,6 +46,12 @@ query GetPaginatedContacts($pageNumber: Int!, $pageSize: Int!,$searchQuery:Strin
       image
       name
       phone
+      contactDetail {
+        address
+        contactId
+        country
+        pincode
+      }
     }
   }
 }

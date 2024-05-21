@@ -27,7 +27,8 @@ namespace ContactApi.Repositories
         public async Task<Contact> GetContactByIdAsync(int id)
         {
             using var context = _context.CreateDbContext();
-            return await context.Contacts.FindAsync(id);
+            var all = await context.Contacts.Include(i => i.ContactDetail).ToListAsync();
+            return all.Where(c => c.Id == id).FirstOrDefault();
         }
 
         public async Task<Contact> AddContactAsync(Contact contact)
@@ -43,7 +44,7 @@ namespace ContactApi.Repositories
             using var context = _context.CreateDbContext();
 
             // Query for total count
-            IQueryable<Contact> query = context.Contacts;
+            IQueryable<Contact> query = context.Contacts.Include(i => i.ContactDetail);
 
             // Apply search filter if search query is provided
             if (!string.IsNullOrEmpty(searchQuery))
@@ -67,11 +68,17 @@ namespace ContactApi.Repositories
         {
             using var context = _context.CreateDbContext();
             context.Entry(contact).State = EntityState.Modified;
-            //_context.Entry(existingContact).CurrentValues.SetValues(contactDto);
-            context.Contacts.Update(contact);
+
+            // If ContactDetail is not being tracked properly, you may need to explicitly set its state as well.
+            if (contact.ContactDetail != null)
+            {
+                context.Entry(contact.ContactDetail).State = EntityState.Modified;
+            }
+
             await context.SaveChangesAsync();
             return contact;
         }
+
 
         public async Task DeleteContactAsync(int id)
         {

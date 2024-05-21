@@ -9,6 +9,7 @@ namespace ContactApi
         public MappingProfile()
         {
             CreateMap<Contact, ContactDTO>().ReverseMap();
+            CreateMap<ContactDetail, ContactDetailDTO>().ReverseMap();
         }
     }
 

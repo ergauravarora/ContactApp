@@ -5,13 +5,16 @@ import { fetchContacts, deleteContact } from '../store/contactSlice';
 import { Button, Form, Card, Spinner, Row, Col, Pagination } from 'react-bootstrap';
 import { ThunkDispatch } from 'redux-thunk';
 import { useNavigate } from 'react-router-dom';
+import { FaPlus, FaEdit, FaTrash, FaAngleDown, FaAngleUp } from 'react-icons/fa'; // Import Font Awesome icons
 import './styles.css'; // Import the CSS file
+import { Contact } from '../interfaces/Contact';
 
 const ContactList: React.FC = () => {
   const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
   const { contacts, loading, error, pageNumber, pageSize, totalCount } = useSelector((state: RootState) => state.contacts);
 
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedContactId, setSelectedContactId] = useState<number | null>(null);
 
   const history = useNavigate();
 
@@ -21,6 +24,10 @@ const ContactList: React.FC = () => {
 
   const handleDelete = (id: number) => {
     dispatch(deleteContact(id));
+  };
+
+  const handleToggleDetail = (id: number) => {
+    setSelectedContactId(id === selectedContactId ? null : id);
   };
 
   if (loading) {
@@ -56,40 +63,54 @@ const ContactList: React.FC = () => {
             onChange={handleSearch}
           />
         </Form.Group>
-        <Button variant="primary" className="floating-btn" onClick={handleAdd}>+</Button>
+        <Button variant="primary" className="floating-btn" onClick={handleAdd}><FaPlus /></Button>
       </div>
 
       <Row xs={1} md={2} lg={3} xl={4} className="g-4">
-        {contacts.map(contact => (
+        {contacts.map((contact: Contact) => (
           <Col key={contact.id}>
-            <Card style={{ marginBottom: '20px' }}>
-            <Card.Body>
-              <div style={{ textAlign: 'center', marginBottom: '10px' }}>
-                <img src={contact.image} alt="Profile" style={{ width: '80px', height: '80px', borderRadius: '50%', border: '2px solid #fff' }} />
+            <Card style={{ marginBottom: '20px', position: 'relative' }}>
+              <div style={{ position: 'absolute', top: '5px', right: '5px', cursor: 'pointer' }} onClick={() => handleToggleDetail(contact.id)}>
+                {selectedContactId === contact.id ? <FaAngleUp /> : <FaAngleDown />}
               </div>
-              <Card.Title>Contact Information</Card.Title>
-              <div className="contact-info">
-                <div className="info-label">Name:</div>
-                <div>{contact.name}</div>
-              </div>
-              <div className="contact-info">
-                <div className="info-label">Email:</div>
-                <div>{contact.email}</div>
-              </div>
-              <div className="contact-info">
-                <div className="info-label">Phone:</div>
-                <div>{contact.phone}</div>
-              </div>
-              <div className="button-group">
-                <Button variant="primary" onClick={() => handleEdit(contact.id)}>
-                  <span>Edit</span>
-                </Button>
-                <Button variant="danger" onClick={() => handleDelete(contact.id)}>
-                  <span>Delete</span>
-                </Button>
-              </div>
-            </Card.Body>
-
+              <Card.Body>
+                <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+                  <img src={contact.image} alt="Profile" style={{ width: '80px', height: '80px', borderRadius: '50%', border: '2px solid #fff' }} />
+                </div>
+                <Card.Title>Contact Information</Card.Title>
+                <div className="contact-info">
+                  <div className="info-label">Name:</div>
+                  <div>{contact.name}</div>
+                </div>
+                <div className="contact-info">
+                  <div className="info-label">Email:</div>
+                  <div>{contact.email}</div>
+                </div>
+                <div className="contact-info">
+                  <div className="info-label">Phone:</div>
+                  <div>{contact.phone}</div>
+                </div>
+                <div className="button-group">
+                  <Button variant="primary" onClick={() => handleEdit(contact.id)}><FaEdit /></Button>
+                  <Button variant="danger" onClick={() => handleDelete(contact.id)}><FaTrash /></Button>
+                </div>
+                {selectedContactId === contact.id && (
+                  <div>
+                    <div className="contact-info">
+                      <div className="info-label">Address:</div>
+                      <div>{contact.contactDetail.address}</div>
+                    </div>
+                    <div className="contact-info">
+                      <div className="info-label">Pincode:</div>
+                      <div>{contact.contactDetail.pincode}</div>
+                    </div>
+                    <div className="contact-info">
+                      <div className="info-label">Country:</div>
+                      <div>{contact.contactDetail.country}</div>
+                    </div>
+                  </div>
+                )}
+              </Card.Body>
             </Card>
           </Col>
         ))}

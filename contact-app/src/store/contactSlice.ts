@@ -2,14 +2,8 @@ import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { GraphQLClient } from 'graphql-request';
 import { GET_CONTACTS_Paginated, GET_CONTACT_BY_ID } from '../graphql/queries';
 import { ADD_CONTACT, UPDATE_CONTACT, DELETE_CONTACT } from '../graphql/mutations';
+import { Contact } from '../interfaces/Contact';
 
-interface Contact {
-  id: number;
-  name: string;
-  email: string;
-  phone: string;
-  image: string;
-}
 
 interface ContactsState {
   contacts: Contact[];
@@ -76,7 +70,6 @@ const contactsSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchContacts.fulfilled, (state, action: PayloadAction<any>) => {
-        debugger
         state.loading = false;
         state.contacts = action.payload.contacts;
         state.pageNumber = action.payload.pageNumber;

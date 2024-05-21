@@ -1,27 +1,39 @@
 import { gql } from 'graphql-request';
 
 export const ADD_CONTACT = gql`
-  mutation AddContact($input: AddContactInput!) {
-    addContact(input: $input) {
-      id
-      name
-      email
-      phone
-      image
+mutation addContact($input: AddContactInput!) {
+  addContact(input:$input) {
+    email
+    id
+    image
+    name
+    phone
+    contactDetail {
+      address
+      contactId
+      country
+      pincode
     }
   }
+}
 `;
 
 export const UPDATE_CONTACT = gql`
   mutation UpdateContact($input: UpdateContactInput!) {
-    updateContact(input: $input) {
-      id
-      name
-      email
-      phone
-      image
+  updateContact(input: $input) {
+    id
+    name
+    email
+    phone
+    image
+    contactDetail {
+      address
+      contactId
+      country
+      pincode
     }
   }
+}
 `;
 
 export const DELETE_CONTACT = gql`
